@@ -10,8 +10,7 @@ COPY --from=spiralscout/roadrunner:2.4.2 /usr/bin/rr /usr/bin/rr
 WORKDIR /app
 COPY . .
 RUN rm -rf /app/vendor
-RUN rm -rf /app/composer.lock
-RUN composer install 
+RUN rm -rf /app/composer.lock 
 RUN composer require laravel/octane spiral/roadrunner
 COPY .env.example .env
 RUN mkdir -p /app/storage/logs
